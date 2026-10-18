@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Disable transformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<!-- Website description -->
+
+
+<!-- Website keywords -->
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="Zongpu's Blog" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="http://yoursite.com/page/2/" />
+
+<!-- Fancybox styling -->
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
+
+<script>
+  window.config = {"toc":true,"fancybox":true,"latex":false};
+</script>
+  
+  <title>Zongpu&#39;s Blog</title>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Zongpu&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        Home              </li>
+    </a>
+    
+    <a href="/archives/">
+      <li class="mobile-menu-item">
+        
+        
+        Archives              </li>
+    </a>
+    
+    <a href="/tags/">
+      <li class="mobile-menu-item">
+        
+        
+        Tags              </li>
+    </a>
+    
+    <a href="/categories/">
+      <li class="mobile-menu-item">
+        
+        
+        Categories              </li>
+    </a>
+    
+    <a href="/photography/">
+      <li class="mobile-menu-item">
+        
+        
+        Photography              </li>
+    </a>
+    
+    <a href="/about/">
+      <li class="mobile-menu-item">
+        
+        
+        About              </li>
+    </a>
+    
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">Zongpu's Blog</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              Home  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives/">  
+              
+              
+              Archives  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/tags/">  
+              
+              
+              Tags  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories/">  
+              
+              
+              Categories  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/photography/">  
+              
+              
+              Photography  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/about/">  
+              
+              
+              About  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
+
+    </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <section id="posts" class="posts">
+  
+  
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/09/01/%E9%9D%A2%E8%AF%95%E9%A2%9810%EF%BC%9A%E8%B7%B3%E5%8F%B0%E9%98%B6/">面试题10：跳台阶</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-09-01
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <p>题目：<a href="https://www.nowcoder.com/ta/coding-interviews">https://www.nowcoder.com/ta/coding-interviews</a></p>
+<p>这是在“面试题10：非波拉契数列”中的另一个题目</p>
+<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+<p>理解：</p>
+<p>如果有1级台阶，只有1种 ；如果有2级台阶，有1–1、2两种 ；如果有3级台阶，有1–1–1、1–2、2–1三种跳法</p>
+<p>假设n级台阶有F(n)种跳法，一定是先跳1级或者先跳2级这两类方式，再继续跳到n级台阶，跳1级后有F(n-1)种，跳2级后有F(n-2)种，故共有F(n)&#x3D;F(n-1)+F(n-2)。这与斐波拉契数列一致。</p>
+<p>但是跳台阶没有0级台阶：F(1)&#x3D;1,F(2)&#x3D;2,F(3)&#x3D;3,F(4)&#x3D;5,…,F(n)&#x3D;F(n-1)+F(n-2),…</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution1</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">jumpFloor</span>(<span class="params">self, number</span>):</span><br><span class="line">        <span class="keyword">if</span> number == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> number == <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            a = <span class="number">1</span></span><br><span class="line">            b = <span class="number">2</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,number):</span><br><span class="line">                b = a + b</span><br><span class="line">                a = b - a</span><br><span class="line">            <span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution1()</span><br><span class="line">answer = method.jumpFloor(<span class="number">5</span>)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>8
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">jumpFloor</span>(<span class="params">self, number</span>):</span><br><span class="line">        <span class="keyword">if</span> number == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> number == <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            a = <span class="number">1</span></span><br><span class="line">            b = <span class="number">2</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,number):</span><br><span class="line">                a,b = b,a+b</span><br><span class="line">            <span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution()</span><br><span class="line">answer = method.jumpFloor(<span class="number">5</span>)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>8
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/09/01/%E9%9D%A2%E8%AF%95%E9%A2%9810%EF%BC%9A%E5%8F%98%E6%80%81%E8%B7%B3%E5%8F%B0%E9%98%B6/">面试题10：变态跳台阶</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-09-01
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <p>题目：<a href="https://www.nowcoder.com/ta/coding-interviews?page=1">https://www.nowcoder.com/ta/coding-interviews?page=1</a></p>
+<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+<p>理解：</p>
+<p>跟之前的分析有相似的地方，假设跳n级台阶有F(n)种方式，那么可能的情况有，先跳1级、或者先跳2级、或者先跳4级、…、或者先跳n-1级、或者直接跳到n级.</p>
+<p>相应的：先跳1级后有F(n-1)种，先跳2级后有F(n-2)种，…，跳n-1级有F(1)种，值得注意的是<strong>直接跳到n级台阶为1种</strong></p>
+<p>于是：F(n)&#x3D;F(n-1)+F(n-2)+F(n-3)+…+F(3)+F(2)+F(1)+1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution1</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">jumpFloorII</span>(<span class="params">self, number</span>):</span><br><span class="line">        a = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">if</span> number &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">elif</span> number == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> number == <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, number):<span class="comment">#i仅仅代表需要操作的次数</span></span><br><span class="line">                ai = <span class="number">1</span> + <span class="built_in">sum</span>(a)</span><br><span class="line">                a.append(ai)</span><br><span class="line">            <span class="keyword">return</span> a[number-<span class="number">1</span>]<span class="comment">#索引值（从0开始）比实际台阶数小1</span></span><br><span class="line">                </span><br><span class="line">            </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution1()</span><br><span class="line">answer = method.jumpFloorII(<span class="number">5</span>)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>16
+</code></pre>
+<p>根据递推公式：$F(n)&#x3D;2^{(n-1)}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution2</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">jumpFloorII</span>(<span class="params">self, number</span>):</span><br><span class="line">        <span class="keyword">if</span> number &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span>**(number-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution2()</span><br><span class="line">answer = method.jumpFloorII(<span class="number">5</span>)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>16
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/08/06/%E9%9D%A2%E8%AF%95%E9%A2%989%EF%BC%9A%E7%94%A8%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/">面试题9：用两个栈实现队列</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-08-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <p>题目：<br><a href="https://www.nowcoder.com/ta/coding-interviews">https://www.nowcoder.com/ta/coding-interviews</a></p>
+<p>用两个栈来实现一个队列；<br>完成队列的Push和Pop操作；</p>
+<p>思考：</p>
+<p>栈是有序的 LIFO，也就是后进先出（先进后出）;<br>队列是有序的FIFO，也就是先进先出。</p>
+<p>也就是要用两个先进后出的栈，实现先进先出的队列。</p>
+<p>例如：stack1&#x3D;{a}; stack2&#x3D;{};</p>
+<p>压入b,c:stack1&#x3D;{c,b,a}(a在栈底，c在栈顶);stack2&#x3D;{};</p>
+<p>当我们想要弹出a时，由于a在stack1底，不能直接弹出，于是我们先将stack1的元素按照栈先入后出的原则弹出并压入stack2有：stack2&#x3D;{a,b,c}(此时，a在栈顶，c在栈底)；</p>
+<p>于是，可以顺利从stack2中弹出a，总体上实现队列先入先出的性质。</p>
+<p>总结：</p>
+<p>push()方法可以利用list.append()方法实现；</p>
+<p>pop()方法：判断stack2是否为空，不空，依次弹出栈顶元素；为空，则先将stack1中元素按照先入后出的原则弹出并压入stack2，然后弹出stack2中栈顶元素；总体实现队列功能。</p>
+<p>python中可用列表表示后入先出的栈，list.pop()默认删除列表最后一个元素（此外，pop()有可选参数，如：list1.pop(1)，1为待删除元素的索引，pop方法返回删除的列表元素）；</p>
+<p>push()方法，可看作用list.append()往列表尾追加新元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;Google&#x27;</span>, <span class="string">&#x27;Runoob&#x27;</span>, <span class="string">&#x27;Taobao&#x27;</span>]</span><br><span class="line">list_pop=list1.pop()</span><br><span class="line"><span class="built_in">print</span>( <span class="string">&quot;删除的项为 :&quot;</span>, list_pop)</span><br><span class="line"><span class="built_in">print</span>( <span class="string">&quot;列表现在为 : &quot;</span>, list1)</span><br></pre></td></tr></table></figure>
+
+<pre><code>删除的项为 : Taobao
+列表现在为 :  [&#39;Google&#39;, &#39;Runoob&#39;]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list2 = [<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>]</span><br><span class="line">list_push=list2.append(<span class="string">&#x27;new_4&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>( <span class="string">&quot;列表现在为 : &quot;</span>, list2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>列表现在为 :  [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;new_4&#39;]
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.stack1=[]</span><br><span class="line">        <span class="variable language_">self</span>.stack2=[<span class="string">&#x27;x&#x27;</span>,<span class="string">&#x27;y&#x27;</span>]<span class="comment">#顺序，先x，再y，说明在之前有：stack1=&#123;&#x27;y&#x27;,&#x27;x&#x27;&#125;,y比x先入栈</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">#     def push(self, node):</span></span><br><span class="line"><span class="comment">#         self.stack1.append(node)#直接在stack1中压入元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#这是一个参考博主的写法，增加了对stack1是否为空的判断及操作</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, node</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.stack1:<span class="comment">#如果stack1非空，在其中压入元素</span></span><br><span class="line">            <span class="variable language_">self</span>.stack1.append(node)</span><br><span class="line">        <span class="keyword">else</span>:<span class="comment">#若stack1空</span></span><br><span class="line">            <span class="keyword">while</span> <span class="variable language_">self</span>.stack2:<span class="comment">#在stack2非空时（此时，说明其中数据先进入队列）</span></span><br><span class="line">                <span class="variable language_">self</span>.stack1.append(<span class="variable language_">self</span>.stack2.pop())<span class="comment">#先将stack2中元素弹出并压入到stack1，形成新的待追加新元素的栈，</span></span><br><span class="line"><span class="comment">#我猜这样是为了方便后面的pop处理，因为这样不用判断stack2是否为空（经过形成新的stack1的处理，stack2始终为空），直接将stack1元素弹出压入stack2，再进行pop就好</span></span><br><span class="line">            <span class="variable language_">self</span>.stack1.append(node)<span class="comment">#然后压入新的元素，此步不可少，不然会造成新压入的第一个元素缺失</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.stack2:</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">self</span>.stack2.pop()</span><br><span class="line">        <span class="keyword">elif</span> <span class="variable language_">self</span>.stack1:</span><br><span class="line">            <span class="keyword">while</span> <span class="variable language_">self</span>.stack1:</span><br><span class="line">                <span class="variable language_">self</span>.stack2.append(<span class="variable language_">self</span>.stack1.pop())</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">self</span>.stack2.pop()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span> </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">method = Solution()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">6</span>):</span><br><span class="line">    push = method.push(i)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;stack1=&quot;</span>,method.stack1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;stack2=&quot;</span>,method.stack2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>stack1= [&#39;y&#39;, &#39;x&#39;, 1, 2, 3, 4, 5]
+stack2= []
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pop = method.pop()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;stack1=&quot;</span>,method.stack1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;弹出的元素为&quot;</span>,pop)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;stack2=&quot;</span>,method.stack2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>stack1= []
+弹出的元素为 y
+stack2= [5, 4, 3, 2, 1, &#39;x&#39;]
+</code></pre>
+<p>由于在push方法中增加了对stack2的处理，原pop方法可以简化，因为处理后的stack2始终为空</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution1</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.stack1=[]</span><br><span class="line">        <span class="variable language_">self</span>.stack2=[<span class="number">6</span>,<span class="number">7</span>]</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, node</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.stack2:</span><br><span class="line">            <span class="keyword">while</span> <span class="variable language_">self</span>.stack2:</span><br><span class="line">                <span class="variable language_">self</span>.stack1.append(<span class="variable language_">self</span>.stack2.pop())</span><br><span class="line">        <span class="variable language_">self</span>.stack1.append(node)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="variable language_">self</span>.stack1:<span class="comment">#如果stack1不空</span></span><br><span class="line">            <span class="keyword">while</span> <span class="variable language_">self</span>.stack1:</span><br><span class="line">                <span class="variable language_">self</span>.stack2.append(<span class="variable language_">self</span>.stack1.pop())<span class="comment">#直接将stack1中元素弹出，再压入stack2，形成待弹出栈</span></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">self</span>.stack2.pop()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">method = Solution1()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">6</span>):</span><br><span class="line">    push = method.push(i)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;stack1=&quot;</span>,method.stack1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;stack2=&quot;</span>,method.stack2)</span><br></pre></td></tr></table></figure>
+
+<pre><code>stack1= [7, 6, 1, 2, 3, 4, 5]
+stack2= []
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pop = method.pop()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;stack1=&quot;</span>,method.stack1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;弹出的元素为&quot;</span>,pop)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;stack2=&quot;</span>,method.stack2)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>stack1= []
+弹出的元素为 7
+stack2= [5, 4, 3, 2, 1, 6]
+</code></pre>
+<p>reference：</p>
+<p>1.<a href="https://blog.csdn.net/Datawhale/article/details/82118919">https://blog.csdn.net/Datawhale/article/details/82118919</a></p>
+<p>2.<a href="https://blog.csdn.net/fuxuemingzhu/article/details/79499461">https://blog.csdn.net/fuxuemingzhu/article/details/79499461</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/08/06/%E9%9D%A2%E8%AF%95%E9%A2%986%EF%BC%9A%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">面试题6：从头到尾打印链表</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-08-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <p>题目：<br><a href="https://www.nowcoder.com/ta/coding-interviews">https://www.nowcoder.com/ta/coding-interviews</a></p>
+<p>输入一个链表：</p>
+<p>按链表值从尾到头的顺序返回一个ArrayList。</p>
+<p>定义链表：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ListNode</span>:</span><br><span class="line">     <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, x, <span class="built_in">next</span>=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="variable language_">self</span>.val = x</span><br><span class="line">        <span class="variable language_">self</span>.<span class="built_in">next</span> = <span class="built_in">next</span></span><br></pre></td></tr></table></figure>
+
+<p>思考：</p>
+<p>读取链表中的元素，放入列表，倒序输出</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">printListFromTailToHead</span>(<span class="params">self, listNode</span>):</span><br><span class="line">        <span class="built_in">list</span>=[]</span><br><span class="line">        <span class="keyword">while</span> listNode:</span><br><span class="line">            <span class="built_in">list</span>.append(listNode.val)</span><br><span class="line">            listNode = listNode.<span class="built_in">next</span></span><br><span class="line"><span class="comment">#         return list[::1]#顺序列表</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">list</span>[::-<span class="number">1</span>]<span class="comment">#逆序列表</span></span><br></pre></td></tr></table></figure>
+
+<p>疑问:链表的顺序感觉上跟直觉相反?在这里,用循环创建链表结构,最先创建的是末节点.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据节点定义,用循环创建一个链表结构:</span></span><br><span class="line"><span class="comment"># 5,4,3,2,1</span></span><br><span class="line"></span><br><span class="line">head = <span class="literal">None</span><span class="comment">#最后一个指向None</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">6</span>):</span><br><span class="line">    head = ListNode(i,head)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;这是生成的链表数据&quot;</span>,head.val)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<pre><code>这是生成的链表数据 1
+这是生成的链表数据 2
+这是生成的链表数据 3
+这是生成的链表数据 4
+这是生成的链表数据 5
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">method = Solution()</span><br><span class="line">answer = method.printListFromTailToHead(head)</span><br><span class="line">answer</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>[1, 2, 3, 4, 5]
+</code></pre>
+<p>python列表切片</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"></span><br><span class="line">s = <span class="string">&#x27;abcdefg&#x27;</span></span><br><span class="line"><span class="comment"># 返回从起始位置到索引位置 2 处的字符串切片</span></span><br><span class="line"><span class="built_in">print</span>(s[:<span class="number">3</span>]) <span class="comment"># 输出 &#x27;abc&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 返回从第三个索引位置到结尾的字符串切片</span></span><br><span class="line"><span class="built_in">print</span>(s[<span class="number">3</span>:]) <span class="comment"># 输出 &#x27;defg&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串逆序输出</span></span><br><span class="line"><span class="built_in">print</span>(s[::-<span class="number">1</span>]) <span class="comment"># 输出 &#x27;gfedcba&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出从开始位置间隔一个字符组成的字符串</span></span><br><span class="line"><span class="built_in">print</span>(s[::<span class="number">2</span>]) <span class="comment"># 输出 &#x27;aceg&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">range</span>(<span class="number">10</span>)[::<span class="number">2</span>])  <span class="comment"># 会直接输出range(0, 10, 2)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">10</span>)[::<span class="number">2</span>])) <span class="comment">#这样才能输出偶数：[0, 2, 4, 6, 8]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 它们也可以相互结合使用。</span></span><br><span class="line"><span class="comment"># 从索引位置 6 到索引位置 2，逆向间隔一个字符</span></span><br><span class="line"><span class="built_in">print</span>(s[<span class="number">6</span>:<span class="number">2</span>:-<span class="number">2</span>]) <span class="comment"># 输出&#x27;ge&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>abc
+defg
+gfedcba
+aceg
+range(0, 10, 2)
+ge
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">range</span>(<span class="number">10</span>)[::<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<pre><code>range(0, 10, 2)
+</code></pre>
+<p>reference：</p>
+<p>1.<a href="https://blog.csdn.net/Datawhale/article/details/81947290">https://blog.csdn.net/Datawhale/article/details/81947290</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/08/06/%E9%9D%A2%E8%AF%95%E9%A2%987%EF%BC%9A%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/">面试题7：重建二叉树</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-08-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <p>题目： <a href="https://www.nowcoder.com/ta/coding-interviews">https://www.nowcoder.com/ta/coding-interviews</a></p>
+<p>输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。例如输入前序遍历序列{1,2,4,7,3,5,6,8}和中序遍历序列{4,7,2,1,5,3,8,6}，则重建二叉树并返回。</p>
+<p>思考：</p>
+<p>前序遍历的第一个值是二叉树的根节点，中旬遍历中根节点（<strong>索引为i</strong>）前边的都是左子树的值（对应前序遍历[1:i+1]中的元素），后边的是右子树的值（对应前序遍历[i+1:]中的元素）；</p>
+<p>递归重复以上过程：取前序遍历[1:i+1]和中序遍历[:i]中的值重复上一个过程得到左子树,取前序遍历[i+1:]和中序遍历[i+1：]得到右子树</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义树节点</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">TreeNode</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="variable language_">self</span>.val = x</span><br><span class="line">        <span class="variable language_">self</span>.left = <span class="literal">None</span></span><br><span class="line">        <span class="variable language_">self</span>.right = <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">PrintFromTopToBottom</span>(<span class="params">root</span>):<span class="comment">#打印二叉树（从上往下，同层节点从左至右打印）</span></span><br><span class="line">    array = []</span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">    array.append(root)</span><br><span class="line">    <span class="keyword">while</span> array:</span><br><span class="line">        newNode = array.pop(<span class="number">0</span>)</span><br><span class="line">        result.append(newNode.val)</span><br><span class="line">        <span class="keyword">if</span> newNode.left != <span class="literal">None</span>:</span><br><span class="line">            array.append(newNode.left)</span><br><span class="line">        <span class="keyword">if</span> newNode.right != <span class="literal">None</span>:</span><br><span class="line">            array.append(newNode.right)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<p>方法1</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reConstructBinaryTree</span>(<span class="params">self, preorder,inorder</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(preorder) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(preorder) == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> TreeNode(preorder[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            index = inorder.index(preorder[<span class="number">0</span>])<span class="comment">#得到根节点在中序遍历中的索引</span></span><br><span class="line">            node = TreeNode(preorder[<span class="number">0</span>])<span class="comment">#根节点</span></span><br><span class="line">            </span><br><span class="line">            preorderLeft = preorder[<span class="number">1</span>:index+<span class="number">1</span>]<span class="comment">#左子树的元素</span></span><br><span class="line">            inorderLeft = inorder[:index]</span><br><span class="line">            preorderRight = preorder[index+<span class="number">1</span>:]<span class="comment">#右子树的元素</span></span><br><span class="line">            inorderRight = inorder[index+<span class="number">1</span>:]</span><br><span class="line">            </span><br><span class="line">            node.left = <span class="variable language_">self</span>.reConstructBinaryTree(preorderLeft,inorderLeft)<span class="comment">#递归调用重建方法self.XX()</span></span><br><span class="line">            node.right = <span class="variable language_">self</span>.reConstructBinaryTree(preorderRight,inorderRight)</span><br><span class="line">        <span class="keyword">return</span> node</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">solution = Solution()</span><br><span class="line">preorder_seq = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>]</span><br><span class="line">middleorder_seq = [<span class="number">4</span>, <span class="number">7</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">6</span>]</span><br><span class="line"><span class="comment"># print(middleorder_seq[-4:])</span></span><br><span class="line">treeRoot1 = solution.reConstructBinaryTree(preorder_seq, middleorder_seq)</span><br><span class="line">newArray = PrintFromTopToBottom(treeRoot1)</span><br><span class="line"><span class="built_in">print</span>(newArray)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[5, 3, 8, 6]
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre>
+<p>方法2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">construct_tree</span>(<span class="params">self, preorder=<span class="literal">None</span>, inorder=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        构建二叉树</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> preorder <span class="keyword">or</span> <span class="keyword">not</span> inorder:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        index = inorder.index(preorder[<span class="number">0</span>])</span><br><span class="line">        left = inorder[<span class="number">0</span>:index]</span><br><span class="line">        right = inorder[index+<span class="number">1</span>:]</span><br><span class="line">        root = TreeNode(preorder[<span class="number">0</span>])</span><br><span class="line">        root.left = construct_tree(preorder[<span class="number">1</span>:<span class="number">1</span>+<span class="built_in">len</span>(left)], left)<span class="comment">#这里其实有len(left)=index</span></span><br><span class="line">        root.right = construct_tree(preorder[-<span class="built_in">len</span>(right):], right)</span><br><span class="line">        <span class="comment">#preorder[-3:]表示从-3到末尾处，包含-3这个索引（倒数第三）位置的元素</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br></pre></td></tr></table></figure>
+
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/Datawhale/article/details/81948283">https://blog.csdn.net/Datawhale/article/details/81948283</a></p>
+<p><a href="https://blog.csdn.net/fuxuemingzhu/article/details/70303139">https://blog.csdn.net/fuxuemingzhu/article/details/70303139</a></p>
+<p><a href="https://blog.csdn.net/u010005281/article/details/79493413">https://blog.csdn.net/u010005281/article/details/79493413</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/08/06/%E9%9D%A2%E8%AF%95%E9%A2%984%EF%BC%9A%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/">面试题4：二维数组中的查找</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-08-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <p><strong>题目：</strong><br>在一个二维数组中（每个一维数组的长度相同），<br>每一行都按照从左到右递增的顺序排序；<br>每一列都按照从上到下递增的顺序排序；<br>请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<p><strong>思考：</strong><br>什么是二维数组？<br>直观的想到矩阵,实际上python当中没有数组的概念, 而是列表(List), 二维列表相当于二维数组 。<br>如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">array = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">2</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">12</span>],[<span class="number">4</span>,<span class="number">7</span>,<span class="number">10</span>,<span class="number">13</span>],[<span class="number">6</span>,<span class="number">8</span>,<span class="number">11</span>,<span class="number">15</span>]])</span><br><span class="line">array<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([[ 1,  2,  8,  9],
+       [ 2,  4,  9, 12],
+       [ 4,  7, 10, 13],
+       [ 6,  8, 11, 15]])
+</code></pre>
+<p><strong>实现</strong></p>
+<p>1.最直观的是直接循环遍历每一个元素，判断是否等于给定的整数，如果相等则输出存在，否则不存在</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="comment"># array 二维列表</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Find</span>(<span class="params">self, target, array</span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array)):<span class="comment"># row = len(array) #列表的长度（有多少个元素，这里元素也是列表），可以看作是二维数组的行数</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(array[<span class="number">0</span>])):<span class="comment">#col = len(array[0])#列表第0个元素的长度，可以看作是二维数组的列数</span></span><br><span class="line">                <span class="keyword">if</span> array[i][j] == target:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">method = Solution()</span><br><span class="line">answer = method.Find(<span class="number">70</span>,array)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2.由于数组元素是分别<strong>按行按列递增</strong>的，考虑:将目标值与较大的元素进行比较,通过排除较大值向下遍历</p>
+<p>从<strong>最后一行第一列</strong>开始遍历,记给定的整数为target，数组元素为array[i][j]<br>如果 target &lt; array[i][j] 则<strong>行数减1**<br>如果 target &gt; array[i][j] 则</strong>列数加1**<br>如果 target &#x3D;&#x3D; array[i][j] 则返还True</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="comment"># array 二维列表</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Find</span>(<span class="params">self, target, array</span>):</span><br><span class="line">        fond = <span class="number">0</span></span><br><span class="line">        row = <span class="built_in">len</span>(array) - <span class="number">1</span> </span><br><span class="line">        col = <span class="built_in">len</span>(array[<span class="number">0</span>]) - <span class="number">1</span> </span><br><span class="line">        i = row</span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> i &gt;= <span class="number">0</span> <span class="keyword">and</span> j &lt;= col:</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> target &lt; array[i][j]:</span><br><span class="line">                i = i - <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> target &gt; array[i][j]:</span><br><span class="line">                j = j + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">method = Solution()</span><br><span class="line">answer=method.Find(<span class="number">5</span>,array)</span><br><span class="line">answer</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/08/06/%E9%9D%A2%E8%AF%95%E9%A2%985%EF%BC%9A%E7%A9%BA%E6%A0%BC%E6%9B%BF%E6%8D%A2/">面试题5：空格替换</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-08-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <p>题目：<br><a href="https://www.nowcoder.com/ta/coding-interviews">https://www.nowcoder.com/ta/coding-interviews</a></p>
+<p>将特殊字符替换成ASCII码，例如空格对应32(0x20).在网络编程的背景中为了使服务器识别特殊字符需要做的转换是：</p>
+<p>空格—&gt;’%20’。</p>
+<p>例如：当字符串为’We Are Happy.’则经过替换之后的字符串为’We%20Are%20Happy.’</p>
+<p>思考：<br>基于python的特点，</p>
+<p>如何对字符串进行替换操作？先看看字符串中有哪些常用方法。</p>
+<p>观察到**s.replace(old,new)**可以对字符串进行替换</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="string">&#x27;we are happy.&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>方法1. 利用python的语言特点作字符串替换</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">replaceSpace1</span>(<span class="params">self, s</span>):<span class="comment">#s为含空格字符串</span></span><br><span class="line">        <span class="keyword">return</span> s.replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;%20&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution()</span><br><span class="line">answer = method.replaceSpace1(s)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;we%20are%20happy.&#39;
+</code></pre>
+<p>方法2. 从前往后遍历，依次替换空格</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">replaceSpace2</span>(<span class="params">self, s</span>):</span><br><span class="line">        s_new = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> i == <span class="string">&quot; &quot;</span>:</span><br><span class="line">                i = <span class="string">&quot;%20&quot;</span></span><br><span class="line">            s_new += i</span><br><span class="line">        <span class="keyword">return</span> s_new</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution()</span><br><span class="line">answer = method.replaceSpace2(s)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;we%20are%20happy.&#39;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">方法<span class="number">3.</span> </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">replaceSpace3</span>(<span class="params">self, s</span>):</span><br><span class="line">        s = <span class="built_in">list</span>(s)<span class="comment">#转换成列表</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">            <span class="keyword">if</span> s[i] == <span class="string">&quot; &quot;</span>:</span><br><span class="line">                s[i] = <span class="string">&quot;%20&quot;</span></span><br><span class="line"><span class="comment">#         return s</span></span><br><span class="line"><span class="comment">#         return &quot; &quot;.join(s)#用空格连接各个元素，返回如&#x27;w e %20 a r e %20 h a p p y .&#x27;</span></span><br><span class="line"><span class="comment">#         return &quot;_&quot;.join(s)#用下划线&#x27;_&#x27;连接各个元素，返回如&#x27;w_e_%20_a_r_e_%20_h_a_p_p_y_.&#x27;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(s)<span class="comment">#不用空格或其他任何东西连接各个元素，返回如&#x27;we%20are%20happy.&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution()</span><br><span class="line">answer = method.replaceSpace3(s)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#39;we%20are%20happy.&#39;
+</code></pre>
+<p>join的用法简单来说就是连接字符串。</p>
+<p>join将<strong>容器对象</strong>拆分并以指定的字符将列表内的元素(element)连接起来，返回字符串（注：容器对象内的元素须为字符类型）</p>
+<p><a href="https://www.cnblogs.com/hokky/p/8479991.html">https://www.cnblogs.com/hokky/p/8479991.html</a></p>
+<p><strong>与join相反，split以指定的字符将字符串分割为单个元素(字符类型)并加入list中，返回一个List</strong></p>
+<p>reference：</p>
+<p>1.<a href="https://blog.csdn.net/Datawhale/article/details/81944081">https://blog.csdn.net/Datawhale/article/details/81944081</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/08/06/%E9%9D%A2%E8%AF%95%E9%A2%9810%EF%BC%9A%E6%96%90%E6%B3%A2%E6%8B%89%E5%A5%91%E6%95%B0%E5%88%97/">面试题10：斐波拉契数列</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-08-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <p>题目：<a href="https://www.nowcoder.com/ta/coding-interviews">https://www.nowcoder.com/ta/coding-interviews</a></p>
+<p>现在要求输入一个整数n；</p>
+<p>输出斐波那契数列的第n项（从0开始，第0项为0）。<br>n&lt;&#x3D;39</p>
+<p>斐波那契数列 ：</p>
+<p>因数学家列昂纳多·斐波那契（Leonardoda Fibonacci）以兔子繁殖为例子而引入，故又称为“兔子数列”，指的是这样一个数列：1、1、2、3、5、8、13、21、34、……在数学上，斐波纳契数列以如下被以递推的方法定义：F(1)&#x3D;1，F(2)&#x3D;1, F(n)&#x3D;F(n-1)+F(n-2)（n&gt;&#x3D;2，n∈N*）</p>
+<p>方法1：直接利用递归的方法</p>
+<p>这样的方法效率低，存在大量重复计算:</p>
+<p>例如，想过要求得f(10)需要先求得f(9)、f(8)；要求得f(9)要先求得f(8)、f(7)…如此等等。在剑指offer中给出了直观的依赖关系树形结构</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Fibonacci</span>(<span class="params">self, n</span>):</span><br><span class="line">        <span class="keyword">if</span> n&lt;=<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">elif</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">self</span>.Fibonacci(n-<span class="number">1</span>)+ <span class="variable language_">self</span>.Fibonacci(n-<span class="number">2</span>)<span class="comment">#递归调用的写法！！！self.function</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution()</span><br><span class="line">answer = method.Fibonacci(<span class="number">8</span>)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>21
+</code></pre>
+<p>解法2：</p>
+<p>为了避免重复计算，可以选择从下往上计算，f(0)–&gt;f(1)–&gt;f(2)–&gt;…–&gt;f(10)…以此类推得到第n项。时间复杂度为O(n)。<br>可以用数组存储，空间复杂度 O(n)；也可以用变量存储，空间复杂度 O(1)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution1</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Fibonacci</span>(<span class="params">self, n</span>):</span><br><span class="line">        <span class="keyword">if</span> n&lt;=<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">elif</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            a = <span class="number">0</span></span><br><span class="line">            b = <span class="number">1</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,n+<span class="number">1</span>):<span class="comment">#从第2到n</span></span><br><span class="line">                b = a + b<span class="comment">#更新b（当前非波拉契数列的值）</span></span><br><span class="line">                a = b - a<span class="comment">#a（保留前一个非波拉契数列的值）</span></span><br><span class="line">            <span class="keyword">return</span> b</span><br><span class="line">                </span><br><span class="line">                 </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution1()</span><br><span class="line">answer = method.Fibonacci(<span class="number">8</span>)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>21
+</code></pre>
+<p>方法3：利用python的相关特性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution2</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Fibonacci</span>(<span class="params">self, n</span>):</span><br><span class="line">        <span class="keyword">if</span> n&lt;=<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            a,b=<span class="number">0</span>,<span class="number">1</span> </span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n-<span class="number">1</span>):<span class="comment">#循环n-1次</span></span><br><span class="line">                a,b=b,a+b<span class="comment">#a的变化？先计算右边的值再同时赋值给左边</span></span><br><span class="line">            <span class="keyword">return</span> b</span><br></pre></td></tr></table></figure>
+
+<p>先将b赋予a；再更新b，跟Solution1中的方法相似</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution2()</span><br><span class="line">answer = method.Fibonacci(<span class="number">3</span>)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>2
+</code></pre>
+<p>利用列表来实现是我感觉很赞的方法,最直观明了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution3</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Fibonacci</span>(<span class="params">self, n</span>):</span><br><span class="line">        a = [<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> n&lt;=<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> a[n]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n+<span class="number">1</span>):</span><br><span class="line">                a.append(a[i-<span class="number">1</span>] + a[i-<span class="number">2</span>])</span><br><span class="line">        <span class="keyword">return</span> a[n]</span><br><span class="line">            </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">method = Solution3()</span><br><span class="line">answer = method.Fibonacci(<span class="number">8</span>)</span><br><span class="line">answer</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>21
+</code></pre>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/fuxuemingzhu/article/details/79501434">https://blog.csdn.net/fuxuemingzhu/article/details/79501434</a></p>
+<p><a href="https://blog.csdn.net/Datawhale/article/details/82152447">https://blog.csdn.net/Datawhale/article/details/82152447</a></p>
+<p><a href="https://doocs.gitee.io/coding-interview/#/docs/coding-interview">https://doocs.gitee.io/coding-interview/#/docs/coding-interview</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/08/06/%E4%BF%AE%E6%94%B9jupyter-notebook%E9%BB%98%E8%AE%A4%E5%B7%A5%E4%BD%9C%E8%B7%AF%E5%BE%84/">修改jupyter notebook默认工作路径</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-08-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <h1 id="1-生成配置文件"><a href="#1-生成配置文件" class="headerlink" title="1.生成配置文件"></a>1.生成配置文件</h1><p>在工作虚拟环境下执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter-notebook --generate-config</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-在配置文件中修改-设置默认路径"><a href="#2-在配置文件中修改-设置默认路径" class="headerlink" title="2.在配置文件中修改&#x2F;设置默认路径"></a>2.在配置文件中修改&#x2F;设置默认路径</h1><p><strong>打开配置文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code ~/.jupyter/jupyter_notebook_config.py</span><br></pre></td></tr></table></figure>
+
+<p><strong>搜索找到以下字段</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">c.NotebookApp.notebook_dir = <span class="string">&#x27;&#x27;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>取消注释并在‘’中填入想要的工作路径，例如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.notebook_dir = /home/zongpu/AnacondaProjects</span><br></pre></td></tr></table></figure>
+
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/2019/08/06/AndrewNgMachineLearning%E6%80%BB%E7%BB%93%E4%B9%8BLinearRegression/">AndrewNg Machine Learning 总结之Linear regression</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-08-06
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/Machine-Learning/">Machine Learning</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <h1 id="Linear-regression"><a href="#Linear-regression" class="headerlink" title="Linear regression"></a>Linear regression</h1><h2 id="线性回归模型："><a href="#线性回归模型：" class="headerlink" title="线性回归模型："></a>线性回归模型：</h2><p>$$<br>h_\theta(x)&#x3D;\theta^Tx<br>$$</p>
+<h2 id="代价函数："><a href="#代价函数：" class="headerlink" title="代价函数："></a>代价函数：</h2><p>$$<br>J(\theta)&#x3D;{(1&#x2F;2m)}{\sum_{i&#x3D;1}^{m}{(h_\theta(x^{(i)})-y^{(i)})^2}}<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">J</span> = <span class="title">computeCost</span><span class="params">(X, y, theta)</span></span></span><br><span class="line">m = <span class="built_in">length</span>(y);<span class="comment">% number of training examples</span></span><br><span class="line">方法<span class="number">1</span>：</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:m</span><br><span class="line">     J=J+(X(<span class="built_in">i</span>,:)*theta-y(<span class="built_in">i</span>,:))^<span class="number">2</span>/(<span class="number">2</span>*m);</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line">方法<span class="number">2</span>：</span><br><span class="line">J=sum((X*theta-y).^<span class="number">2</span>)/(<span class="number">2</span>*m);<span class="comment">%此处用.^2对每个值求平方,然后用sum()函数求和利用sunm()函数</span></span><br><span class="line"></span><br><span class="line">方法<span class="number">3</span>：（通用于单变量、多变量回归）</span><br><span class="line">J=((X*theta-y)&#x27;*(X*theta-y))/(<span class="number">2</span>*m);<span class="comment">%向量相乘亦可得到同样的和值</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="梯度下降法更新theta："><a href="#梯度下降法更新theta：" class="headerlink" title="梯度下降法更新theta："></a>梯度下降法更新theta：</h2><p>$$<br>\theta_j:&#x3D;\theta_j-\alpha(1&#x2F;m){\sum_{i&#x3D;1}^{m}{(h_\theta(x^{(i)})-y^{(i)}){x_j^{(i)}}}}<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[theta, J_history]</span> = <span class="title">gradientDescent</span><span class="params">(X, y, theta, alpha, num_iters)</span></span></span><br><span class="line">m = <span class="built_in">length</span>(y); </span><br><span class="line">J_history = <span class="built_in">zeros</span>(num_iters, <span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> iter = <span class="number">1</span>:num_iters</span><br><span class="line"><span class="comment">%     x=X(:,2);%得到列向量x1</span></span><br><span class="line"><span class="comment">%     theta0=theta(1);%得到初值，</span></span><br><span class="line"><span class="comment">%     theta1=theta(2);</span></span><br><span class="line"><span class="comment">%     theta0=theta0-(alpha/m)*sum((X*theta-y));%x0为全1的列向量，不必写出</span></span><br><span class="line"><span class="comment">%     theta1=theta1-(alpha/m)*sum((X*theta-y).*x);%使用点乘.*直接得到每组数据相乘结果</span></span><br><span class="line"><span class="comment">%     theta=[theta0;</span></span><br><span class="line"><span class="comment">%                theta1];%theta是size(2,1)的矩阵，定义时theta = zeros(2, 1)这里theta0与theta1之间应该用分号隔开，表示两行</span></span><br><span class="line">           </span><br><span class="line"> theta = theta - alpha / m * X&#x27; * (X * theta - y);<span class="comment">%整合上面对每个theta操作，写成矩阵形式</span></span><br><span class="line"> <span class="comment">%为了绘制出J(theta)曲线</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">% Save the cost J in every iteration    </span></span><br><span class="line">    J_history(iter) = computeCost(X, y, theta);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="正规方程法直接得到theta解析解："><a href="#正规方程法直接得到theta解析解：" class="headerlink" title="正规方程法直接得到theta解析解："></a>正规方程法直接得到theta解析解：</h2><p>$$<br>\theta&#x3D;(X^TX)^{-1}{X^T}y<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[theta]</span> = <span class="title">normalEqn</span><span class="params">(X, y)</span></span></span><br><span class="line">theta = <span class="built_in">zeros</span>(<span class="built_in">size</span>(X, <span class="number">2</span>), <span class="number">1</span>);</span><br><span class="line"><span class="comment">% theta=((X&#x27;*X)^-1)*X&#x27;*y;</span></span><br><span class="line">theta = pinv(X&#x27; * X) * X&#x27; * y;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="特征归一化："><a href="#特征归一化：" class="headerlink" title="特征归一化："></a>特征归一化：</h2><p>$$<br>x:&#x3D;(x^i-mu)&#x2F;s^i<br>$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[X_norm, mu, sigma]</span> = <span class="title">featureNormalize</span><span class="params">(X)</span></span></span><br><span class="line">X_norm = X;</span><br><span class="line">mu = <span class="built_in">zeros</span>(<span class="number">1</span>, <span class="built_in">size</span>(X, <span class="number">2</span>));</span><br><span class="line">sigma = <span class="built_in">zeros</span>(<span class="number">1</span>, <span class="built_in">size</span>(X, <span class="number">2</span>));    </span><br><span class="line">m = <span class="built_in">length</span>(X(:,<span class="number">1</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">%for i=1:size(X, 2)</span></span><br><span class="line"><span class="comment">%mu(i)=sum(X(:,i))/m;</span></span><br><span class="line"><span class="comment">%sigma(i)=std(X(:,i));%std(X(:,1)) computes the standard deviation</span></span><br><span class="line"><span class="comment">%x=(X(:,i)-mu(i))./sigma(i);%X(:,i)-mu(i))表示每列的每个元素减去均值，./表示点除</span></span><br><span class="line"><span class="comment">%X_norm(:,i)=x;</span></span><br><span class="line"><span class="comment">%end</span></span><br><span class="line"></span><br><span class="line"> mu=<span class="built_in">mean</span>(X);</span><br><span class="line"> sigma=std(X);</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">size</span>(X,<span class="number">2</span>),</span><br><span class="line">     X_norm(:,<span class="built_in">i</span>) = (X(:,<span class="built_in">i</span>) - mu(<span class="built_in">i</span>)) / sigma(<span class="built_in">i</span>);</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+    
+  <nav class="pagination">  
+      
+      <a class="prev" href="/">  
+        <i class="iconfont icon-left"></i>  
+        <span class="prev-text">Prev</span>  
+      </a>  
+      
+      
+      <a class="next" href="/page/3/">  
+        <span class="next-text">Next</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
+      
+  </nav>  
+  
+
+  
+</section>
+        </div>
+          
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/zongpu" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+</div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    footer.hosting
+  </span>
+
+  <span class="copyright-year">
+    <span>
+      
+      &copy;
+      
+      2026      
+    </span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">Zongpu</span>
+  </span>
+
+</div>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+  
+  
+
+
+
+
+
+
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/even.js?v=undefined"></script>
+</body>
+
+</html>

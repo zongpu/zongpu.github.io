@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Disable transformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<!-- Website description -->
+
+<meta name="description" content="CUDA+cuDNN+TF 安装流程和经验教训" />
+
+
+<!-- Website keywords -->
+
+<meta name="keywords" content="Tensorflow, Zongpu&#39;s Blog" />
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="Zongpu's Blog" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="http://yoursite.com/2018/11/01/CUDA+cuDNN+TF-安装流程和经验教训/" />
+
+<!-- Fancybox styling -->
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
+
+<script>
+  window.config = {"toc":true,"fancybox":true,"latex":false};
+</script>
+  
+  <title>CUDA+cuDNN+TF 安装流程和经验教训 - Zongpu&#39;s Blog</title>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Zongpu&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        Home              </li>
+    </a>
+    
+    <a href="/archives/">
+      <li class="mobile-menu-item">
+        
+        
+        Archives              </li>
+    </a>
+    
+    <a href="/tags/">
+      <li class="mobile-menu-item">
+        
+        
+        Tags              </li>
+    </a>
+    
+    <a href="/categories/">
+      <li class="mobile-menu-item">
+        
+        
+        Categories              </li>
+    </a>
+    
+    <a href="/photography/">
+      <li class="mobile-menu-item">
+        
+        
+        Photography              </li>
+    </a>
+    
+    <a href="/about/">
+      <li class="mobile-menu-item">
+        
+        
+        About              </li>
+    </a>
+    
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">Zongpu's Blog</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              Home  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives/">  
+              
+              
+              Archives  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/tags/">  
+              
+              
+              Tags  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories/">  
+              
+              
+              Categories  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/photography/">  
+              
+              
+              Photography  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/about/">  
+              
+              
+              About  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
+
+    </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      CUDA+cuDNN+TF 安装流程和经验教训
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2018-11-01
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E7%89%88%E6%9C%AC%E9%80%89%E6%8B%A9%E7%9A%84%E8%80%83%E8%99%91"><span class="toc-number">1.</span> <span class="toc-text">对版本选择的考虑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E8%A6%81%E6%B1%82"><span class="toc-number">1.1.</span> <span class="toc-text">软件要求</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85CUDA"><span class="toc-number">2.</span> <span class="toc-text">安装CUDA</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB"><span class="toc-number">2.1.</span> <span class="toc-text">1.安装依赖关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85CUDA"><span class="toc-number">2.2.</span> <span class="toc-text">2.开始安装CUDA</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85cuDNN"><span class="toc-number">3.</span> <span class="toc-text">安装cuDNN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Tensorflow"><span class="toc-number">4.</span> <span class="toc-text">安装Tensorflow</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E6%A3%80%E6%9F%A5%E5%B9%B6%E5%87%86%E5%A4%87%E6%89%80%E9%9C%80python%E7%8E%AF%E5%A2%83"><span class="toc-number">4.1.</span> <span class="toc-text">1检查并准备所需python环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85TensorFlow-%E5%9C%A8%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83venv%E4%B8%AD"><span class="toc-number">4.2.</span> <span class="toc-text">2.安装TensorFlow(在虚拟环境venv中)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%81%9A%E4%B8%80%E4%BA%9B%E6%B5%8B%E8%AF%95-%E5%9C%A8venv%E7%8E%AF%E5%A2%83%E4%BB%A5%E5%8F%8A%E9%9D%9E%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-number">4.3.</span> <span class="toc-text">3.做一些测试(在venv环境以及非虚拟环境)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85keras"><span class="toc-number">5.</span> <span class="toc-text">安装keras</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85anaconda"><span class="toc-number">6.</span> <span class="toc-text">安装anaconda</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-number">7.</span> <span class="toc-text">补充</span></a></li></ol>
+    </div>
+  </div>
+  
+
+  <div class="post-content">
+    
+    <p><strong>摘要</strong>：Ubuntu18.04、GCC降低、CUDA版本的选择、cuDNN的选择<br><strong>前言</strong>：在经历一整天反复安装卸载后决定对每一步进行详细记录和分析</p>
+<h1 id="对版本选择的考虑"><a href="#对版本选择的考虑" class="headerlink" title="对版本选择的考虑"></a>对版本选择的考虑</h1><p>我的目的是在Ubuntu18.04安装GPU版本的Tensorflow进行学习,根据TF官网对CUDA&amp;cuDNN的支持信息：</p>
+<blockquote>
+<h2 id="软件要求"><a href="#软件要求" class="headerlink" title="软件要求"></a>软件要求</h2><p>必须在您的系统上安装以下NVIDIA®软件：</p>
+<ul>
+<li>NVIDIA®GPU <a href="https://www.nvidia.com/drivers">驱动程序</a> -CUDA 9.0需要384.x或更高版本。</li>
+<li><a href="https://developer.nvidia.com/cuda-zone">CUDA®Toolkit-</a> TensorFlow支持CUDA 9.0。</li>
+<li><a href="http://docs.nvidia.com/cuda/cupti/">CUPTI</a>附带CUDA工具包。</li>
+<li><a href="https://developer.nvidia.com/cudnn">cuDNN SDK</a>（&gt; &#x3D; 7.2）</li>
+<li><em>（可选）</em> <a href="https://developer.nvidia.com/nccl">NCCL 2.2</a>支持多GPU支持。</li>
+<li><em>（可选）</em> <a href="https://docs.nvidia.com/deeplearning/sdk/tensorrt-install-guide/index.html">TensorRT 4.0</a> 可以改善某些型号推理的延迟和吞吐量。</li>
+</ul>
+</blockquote>
+<p>于是在考虑最新的TF版本情况下，我决定安装<strong>CUDA9.0+cuDNN7.3</strong>版本</p>
+<p>cuda：<a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1704&target_type=runfilelocal">https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&amp;target_arch=x86_64&amp;target_distro=Ubuntu&amp;target_version=1704&amp;target_type=runfilelocal</a></p>
+<p>cudnn：<a href="https://developer.nvidia.com/rdp/cudnn-download%EF%BC%88%E9%9C%80%E8%A6%81%E5%85%88%E6%B3%A8%E5%86%8C%E8%B4%A6%E6%88%B7%EF%BC%89">https://developer.nvidia.com/rdp/cudnn-download（需要先注册账户）</a></p>
+<p>然而尴尬的是CUDA9.0没有ubuntu18.04的选择，不想重装ubuntu，于是我决定下载17.04版本试试看</p>
+<p>最终下载版本：cuda_9.0.176_384.81_linux.run &amp; cudnn-9.0-linux-x64-v7.3.1.20.tgz</p>
+<h1 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h1><h2 id="1-安装依赖关系"><a href="#1-安装依赖关系" class="headerlink" title="1.安装依赖关系"></a>1.安装依赖关系</h2><p>参考：<a href="https://www.cnblogs.com/Ph-one/p/9000211.html">https://www.cnblogs.com/Ph-one/p/9000211.html</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev</span><br></pre></td></tr></table></figure>
+
+<p>根据诸多博客的经验，还需要先降低GCC版本，以下是我的gcc版本信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@zhou-pc:~# gcc --version</span><br><span class="line">gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0</span><br></pre></td></tr></table></figure>
+
+<p>降低GCC版本：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gcc-5 g++-5</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>根据提示开始安装低版本</p>
+<p>然后替换：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 50   # you will find that message that tells you the gcc-5 is set to be automatic.</span><br><span class="line">sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 50   # similiar message as gcc</span><br></pre></td></tr></table></figure>
+
+<p>值得一提的是文章<a href="https://blog.csdn.net/sinat_40276791/article/details/80403784%E4%B8%AD%E6%8F%90%E5%88%B0%E8%AF%B4%EF%BC%9A**%E5%AE%89%E8%A3%85cuda%E7%9A%84%E6%97%B6%E5%80%99%E5%B9%B6%E6%B2%A1%E6%9C%89%E9%99%8D%E7%BA%A7gcc%EF%BC%8Cg++%EF%BC%9B%E8%AF%B4%E6%98%8Ecuda9.0%E5%B7%B2%E7%BB%8F%E6%94%AF%E6%8C%81gcc7.0%E5%AE%89%E8%A3%85%EF%BC%8C%E6%89%80%E8%B0%93%E9%99%8D%E7%BA%A7%E6%98%AF%E5%90%8E%E9%9D%A2%E8%A6%81%E7%BC%96%E8%AF%91cuda%E6%B5%8B%E8%AF%95%E4%BE%8B%E5%AD%90%E7%9A%84%E6%97%B6%E5%80%99%E7%94%A8%E5%88%B06.0%E4%BB%A5%E4%B8%8B%E7%9A%84g++%EF%BC%8C%E5%92%8Cgcc%E7%89%88%E6%9C%AC%E3%80%82**%E4%BD%86%E6%98%AF%E6%88%91%E7%9A%84gcc%E7%89%88%E6%9C%AC%E8%BE%83%E9%AB%98%EF%BC%8C%E4%B8%BA%E4%BF%9D%E9%99%A9%EF%BC%8C%E6%88%91%E8%BF%98%E6%98%AF%E5%85%88%E9%99%8D%E4%BD%8E%E3%80%82">https://blog.csdn.net/sinat_40276791/article/details/80403784中提到说：**安装cuda的时候并没有降级gcc，g++；说明cuda9.0已经支持gcc7.0安装，所谓降级是后面要编译cuda测试例子的时候用到6.0以下的g++，和gcc版本。**但是我的gcc版本较高，为保险，我还是先降低。</a></p>
+<h2 id="2-开始安装CUDA"><a href="#2-开始安装CUDA" class="headerlink" title="2.开始安装CUDA"></a>2.开始安装CUDA</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@zhou-pc:~# cd /home/zongpu/下载 </span><br><span class="line">root@zhou-pc:/home/zongpu/下载# sudo sh cuda_9.0.176_384.81_linux.run</span><br></pre></td></tr></table></figure>
+
+<p>ctrl+c 可快速结束阅读文档</p>
+<p>接下来：</p>
+<p>Do you accept the previously read EULA?<br>accept&#x2F;decline&#x2F;quit: accept</p>
+<p>看到这个我是很荒的，但是博客<a href="https://www.cnblogs.com/Ph-one/p/9000211.html%E4%B9%9F%E6%98%AF%E5%9C%A8ubuntu18.04%E4%B8%8A%E5%AE%89%E8%A3%85%E4%BA%86cuda9%EF%BC%8C%E5%B0%B1%E5%BD%93%E8%AF%95%E8%AF%95">https://www.cnblogs.com/Ph-one/p/9000211.html也是在ubuntu18.04上安装了cuda9，就当试试</a></p>
+<p>You are attempting to install on an unsupported configuration. Do you wish to continue?<br>(y)es&#x2F;(n)o [ default is no ]: </p>
+<p>其他选项我都选了y（es），静静等待安装。</p>
+<p>设置环境变量：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>#在打开的文本中添加</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PATH=/usr/local/cuda-9.0/bin:$PATH</span><br><span class="line">export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure>
+
+<p>更新：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>验证CUDA9.0是否安装成功：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/cuda-9.0/samples/1_Utilities/deviceQuery</span><br><span class="line">sudo make</span><br><span class="line">./deviceQuery</span><br></pre></td></tr></table></figure>
+
+<p>输出为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">CUDA Device Query (Runtime API) version (CUDART static linking)</span><br><span class="line">Detected 1 CUDA Capable device(s)</span><br><span class="line">Device 0: &quot;GeForce GTX 1050&quot;</span><br><span class="line">  CUDA Driver Version / Runtime Version          9.1 / 9.0</span><br><span class="line">  CUDA Capability Major/Minor version number:    6.1</span><br><span class="line">  Total amount of global memory:                 2003 MBytes (2099904512 bytes)</span><br><span class="line">  ( 5) Multiprocessors, (128) CUDA Cores/MP:     640 CUDA Cores</span><br><span class="line">  GPU Max Clock rate:                            1493 MHz (1.49 GHz)</span><br><span class="line">  Memory Clock rate:                             3504 Mhz</span><br><span class="line">  Memory Bus Width:                              128-bit</span><br><span class="line">  L2 Cache Size:                                 524288 bytes</span><br><span class="line">  Maximum Texture Dimension Size (x,y,z)         1D=(131072), 2D=(131072, 65536), 3D=(16384, 16384, 16384)</span><br><span class="line">  Maximum Layered 1D Texture Size, (num) layers  1D=(32768), 2048 layers</span><br><span class="line">  Maximum Layered 2D Texture Size, (num) layers  2D=(32768, 32768), 2048 layers</span><br><span class="line">  Total amount of constant memory:               65536 bytes</span><br><span class="line">  Total amount of shared memory per block:       49152 bytes</span><br><span class="line">  Total number of registers available per block: 65536</span><br><span class="line">  Warp size:                                     32</span><br><span class="line">  Maximum number of threads per multiprocessor:  2048</span><br><span class="line">  Maximum number of threads per block:           1024</span><br><span class="line">  Max dimension size of a thread block (x,y,z): (1024, 1024, 64)</span><br><span class="line">  Max dimension size of a grid size    (x,y,z): (2147483647, 65535, 65535)</span><br><span class="line">  Maximum memory pitch:                          2147483647 bytes</span><br><span class="line">  Texture alignment:                             512 bytes</span><br><span class="line">  Concurrent copy and kernel execution:          Yes with 2 copy engine(s)</span><br><span class="line">  Run time limit on kernels:                     Yes</span><br><span class="line">  Integrated GPU sharing Host Memory:            No</span><br><span class="line">  Support host page-locked memory mapping:       Yes</span><br><span class="line">  Alignment requirement for Surfaces:            Yes</span><br><span class="line">  Device has ECC support:                        Disabled</span><br><span class="line">  Device supports Unified Addressing (UVA):      Yes</span><br><span class="line">  Supports Cooperative Kernel Launch:            Yes</span><br><span class="line">  Supports MultiDevice Co-op Kernel Launch:      Yes</span><br><span class="line">  Device PCI Domain ID / Bus ID / location ID:   0 / 1 / 0</span><br><span class="line">  Compute Mode:</span><br><span class="line">     &lt; Default (multiple host threads can use ::cudaSetDevice() with device simultaneously) &gt;</span><br><span class="line"></span><br><span class="line">deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 9.1, CUDA Runtime Version = 9.0, NumDevs = 1</span><br><span class="line">Result = PASS</span><br></pre></td></tr></table></figure>
+
+<p>测试说明安装成功！</p>
+<h1 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h1><p>之前已经下载好了文件现在直接安装：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf cudnn-9.0-linux-x64-v7.3.1.20.tgz</span><br><span class="line"></span><br><span class="line">sudo cp cuda/include/cudnn.h /usr/local/cuda/include/ </span><br><span class="line">sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64/ -d </span><br><span class="line">sudo chmod a+r /usr/local/cuda/include/cudnn.h </span><br><span class="line">sudo chmod a+r /usr/local/cuda/lib64/libcudnn* </span><br></pre></td></tr></table></figure>
+
+<p>执行以上命令后，测试是否安装好：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvcc -V</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nvcc: NVIDIA (R) Cuda compiler driver</span><br><span class="line">Copyright (c) 2005-2017 NVIDIA Corporation</span><br><span class="line">Built on Fri_Sep__1_21:08:03_CDT_2017</span><br><span class="line">Cuda compilation tools, release 9.0, V9.0.176</span><br></pre></td></tr></table></figure>
+
+<p>cuDNN安装成功！</p>
+<h1 id="安装Tensorflow"><a href="#安装Tensorflow" class="headerlink" title="安装Tensorflow"></a>安装Tensorflow</h1><h2 id="1检查并准备所需python环境"><a href="#1检查并准备所需python环境" class="headerlink" title="1检查并准备所需python环境"></a>1检查并准备所需python环境</h2><p>根据TF官网安装引导查看：<a href="https://tensorflow.google.cn/install/pip">https://tensorflow.google.cn/install/pip</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3 --version</span><br><span class="line">pip3 --version</span><br><span class="line">virtualenv --version</span><br></pre></td></tr></table></figure>
+
+<p>发现：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Command &#x27;virtualenv&#x27; not found, but can be installed with:</span><br><span class="line">apt install virtualenv</span><br></pre></td></tr></table></figure>
+
+<p>我的virtualenv 没有安装，根据提示安装virtualenv ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install virtualenv</span><br></pre></td></tr></table></figure>
+
+<p>安装成功后，安装TF，在这里我用官网引导的安装方式：创建Python虚拟环境用于将程序包安装与系统隔离，</p>
+<p>不同于在之前我自己直接pip install tensorflow-gpu</p>
+<p>步骤如下：</p>
+<p>通过选择Python解释器并创建一个<code>./venv</code>目录来保存它，从而创建一个新的虚拟环境 ：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv --system-site-packages -p python3 ./venv</span><br></pre></td></tr></table></figure>
+
+<p>如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@zhou-pc:~# virtualenv --system-site-packages -p python3 ./venv</span><br><span class="line">Running virtualenv with interpreter /usr/bin/python3</span><br><span class="line">Using base prefix &#x27;/usr&#x27;</span><br><span class="line">New python executable in /root/venv/bin/python3</span><br><span class="line">Not overwriting existing python script /root/venv/bin/python (you must use /root/venv/bin/python3)</span><br><span class="line">Installing setuptools, pip, wheel...done.</span><br></pre></td></tr></table></figure>
+
+<p>使用特定于shell的命令激活虚拟环境（以后每次使用TF前激活）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ./venv/bin/activate  # sh, bash, ksh, or zsh</span><br></pre></td></tr></table></figure>
+
+<p>当virtualenv处于活动状态时，shell提示符前缀为<code>(venv)</code>，如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@zhou-pc:~# source ./venv/bin/activate </span><br><span class="line">(venv) root@zhou-pc:~# </span><br></pre></td></tr></table></figure>
+
+<p>在虚拟环境中安装软件包，而不会影响主机系统设置。从升级开始<code>pip</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade pip</span><br><span class="line"></span><br><span class="line">pip list  # show packages installed within the virtual environment</span><br></pre></td></tr></table></figure>
+
+<p>并在以后退出virtualenv（我们要在这个环境中安装TF，现在不能退出）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate    ＃在使用TensorFlow完成之前不要退出</span><br></pre></td></tr></table></figure>
+
+<p><strong>值得一提的是：当环境创建好了，我们必须在每次使用tensorflow时激活它</strong></p>
+<h2 id="2-安装TensorFlow-在虚拟环境venv中"><a href="#2-安装TensorFlow-在虚拟环境venv中" class="headerlink" title="2.安装TensorFlow(在虚拟环境venv中)"></a>2.安装TensorFlow(在虚拟环境venv中)</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow-gpu</span><br><span class="line">pip install --upgrade tensorflow</span><br><span class="line">python -c &quot;import tensorflow as tf; print(tf.__version__)&quot;</span><br></pre></td></tr></table></figure>
+
+<p>最后输出：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(venv) root@zhou-pc:~# python -c &quot;import tensorflow as tf; print(tf.__version__)&quot;</span><br><span class="line">1.11.0</span><br></pre></td></tr></table></figure>
+
+<p>greaat！现在我们安装TF成功！</p>
+<p><strong>一个问题：</strong>在虚拟环境中安装的始终是cpu版本，不知道为什么；不在虚拟环境中可顺利安装GPU版本。</p>
+<h2 id="3-做一些测试-在venv环境以及非虚拟环境"><a href="#3-做一些测试-在venv环境以及非虚拟环境" class="headerlink" title="3.做一些测试(在venv环境以及非虚拟环境)"></a>3.做一些测试(在venv环境以及非虚拟环境)</h2><p>执行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">python</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">hello = tf.constant(<span class="string">&#x27;Hello, TensorFlow!&#x27;</span>)</span><br><span class="line">sess = tf.Session()</span><br><span class="line"><span class="built_in">print</span>(sess.run(hello))</span><br></pre></td></tr></table></figure>
+
+<p>非虚拟环境时可看到（展示部分）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GeForce GTX 1050, pci bus id: 0000:01:00.0, compute capability: 6.1</span><br></pre></td></tr></table></figure>
+
+<p>虚拟环境中：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装keras"><a href="#安装keras" class="headerlink" title="安装keras"></a>安装keras</h1><p>参考：<a href="https://keras-cn.readthedocs.io/en/latest/for_beginners/keras_linux/">https://keras-cn.readthedocs.io/en/latest/for_beginners/keras_linux/</a></p>
+<p>类似指令比较多，我没有关注他们的区别：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install -U --pre keras</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">或者...</span></span><br><span class="line">pip install keras -U --pre</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="安装anaconda"><a href="#安装anaconda" class="headerlink" title="安装anaconda"></a>安装anaconda</h1><p>先下载anaconda的安装文件，我的版本是：Anaconda3-5.3.0-Linux-x86_64.sh</p>
+<p>cd进文件所在目录执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash Anaconda3-5.3.0-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+
+<p>阅读文档（ctrl+c快速读完），按提示选择各个选项，进行安装：</p>
+<p>其中涉及安装路径、添加环境变量、安装vs code的几个选项，根据提示选择。</p>
+<p>但是安装时我选了环境变量后来还是不能启动anaconda，于是手动添加了一遍：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将anaconda的bin目录加入PATH，根据版本不同，也可能是~/anaconda3/bin</span></span><br><span class="line">echo &#x27;export PATH=&quot;~/anaconda3/bin:$PATH&quot;&#x27;&gt;&gt; ~/.bashrc</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">更新bashrc以立即生效</span></span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
+
+<p>看到各个组件信息则为成功</p>
+<p>启动anaconda（暂停终端则断开）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">anaconda-navigator</span><br></pre></td></tr></table></figure>
+
+<p>打开 Jupyter Notebook：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipython notebook</span><br></pre></td></tr></table></figure>
+
+<p>在最开始安装anaconda时，<strong>我用root权限进行安装，结果Jupyter不能运行</strong>，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@zhou-pc:/home/zongpu/下载# ipython notebook</span><br><span class="line">[TerminalIPythonApp] WARNING | Subcommand `ipython notebook` is deprecated and will be removed in future versions.</span><br><span class="line">[TerminalIPythonApp] WARNING | You likely want to use `jupyter notebook` in the future</span><br><span class="line">[I 18:30:46.711 NotebookApp] JupyterLab extension loaded from /root/anaconda3/lib/python3.7/site-packages/jupyterlab</span><br><span class="line">[I 18:30:46.711 NotebookApp] JupyterLab application directory is /root/anaconda3/share/jupyter/lab</span><br><span class="line">[C 18:30:46.713 NotebookApp] Running as root is not recommended. Use --allow-root to bypass.</span><br></pre></td></tr></table></figure>
+
+<p>这应该是我对anaconda的作用不太了解，另外都使用了默认安装路径，不知道在以后要用到的时候会不会出问题。</p>
+<p>卸载anaconda：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf ~/anaconda3</span><br></pre></td></tr></table></figure>
+
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><p>一篇基于anacond安装TF的文章：</p>
+<p><em>Ubuntu环境下基于Anaconda安装Tensorflow</em><a href="https://blog.csdn.net/hgdwdtt/article/details/78633232">https://blog.csdn.net/hgdwdtt/article/details/78633232</a></p>
+
+    
+  </div>
+
+  
+  <!-- Post Copyright -->
+
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span>Author: </span>
+    <a href="http://yoursite.com">Zongpu</a>
+  </p>
+  <p class="copyright-item">
+    <span>Link: </span>
+    <a href="http://yoursite.com/2018/11/01/CUDA+cuDNN+TF-%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E5%92%8C%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD/">http://yoursite.com/2018/11/01/CUDA+cuDNN+TF-%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B%E5%92%8C%E7%BB%8F%E9%AA%8C%E6%95%99%E8%AE%AD/</a>
+  </p>
+  <p class="copyright-item">
+    <span>License: </span>
+    
+    知识共享署名-非商业性使用 4.0 国际许可协议
+  </p>
+</div>
+
+    
+
+  
+
+  
+  <footer class="post-footer">
+    
+    <div class="post-tags">
+      
+      <a href="/tags/Tensorflow/">Tensorflow</a>
+      
+    </div>
+    
+      
+  <nav class="post-nav">  
+      
+      <a class="prev" href="/2018/11/01/Ubuntu18.04%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0GPU%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">  
+        <i class="iconfont icon-left"></i>  
+        <span class="prev-text nav-default">Ubuntu18.04深度学习GPU环境配置</span>  
+        <span class="prev-text nav-mobile">Prev</span>  
+      </a>  
+      
+      
+  </nav>  
+  
+
+  </footer>
+  
+
+</article>
+        </div>
+          
+  <div class="comments" id="comments">  
+      
+  </div>  
+  
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/zongpu" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+</div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    footer.hosting
+  </span>
+
+  <span class="copyright-year">
+    <span>
+      
+      &copy;
+      
+      2026      
+    </span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">Zongpu</span>
+  </span>
+
+</div>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+  
+  
+  
+
+
+
+
+
+
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/even.js?v=undefined"></script>
+</body>
+
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Website mata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<!-- Disable transformation -->
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<!-- Website description -->
+
+<meta name="description" content="有关Git&amp;Hexo的一些小事儿" />
+
+
+<!-- Website keywords -->
+
+<meta name="keywords" content="Hexo, Git, Zongpu&#39;s Blog" />
+
+
+
+
+<!-- Website rss -->
+
+<link rel="alternate" href="/atom.xml" title="Zongpu's Blog" type="application/atom+xml">
+
+
+<!-- Website favicon -->
+
+
+<!-- Canonical, good for google search engine -->
+<link rel="canonical" href="http://yoursite.com/2019/04/24/有关Git-Hexo的一些小事儿/" />
+
+<!-- Fancybox styling -->
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" />
+
+
+<!-- MathJax (LaTeX) support -->
+
+
+<!-- Theme styling -->
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=" />
+
+<!-- Analytics and push -->
+
+
+
+  
+
+
+
+<!-- LeanCloud Counter -->
+
+
+<script>
+  window.config = {"toc":true,"fancybox":true,"latex":false};
+</script>
+  
+  <title>有关Git&amp;Hexo的一些小事儿 - Zongpu&#39;s Blog</title>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div class="scrollPercentage"></div>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Zongpu&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+    <a href="/">
+      <li class="mobile-menu-item">
+        
+        
+        Home              </li>
+    </a>
+    
+    <a href="/archives/">
+      <li class="mobile-menu-item">
+        
+        
+        Archives              </li>
+    </a>
+    
+    <a href="/tags/">
+      <li class="mobile-menu-item">
+        
+        
+        Tags              </li>
+    </a>
+    
+    <a href="/categories/">
+      <li class="mobile-menu-item">
+        
+        
+        Categories              </li>
+    </a>
+    
+    <a href="/photography/">
+      <li class="mobile-menu-item">
+        
+        
+        Photography              </li>
+    </a>
+    
+    <a href="/about/">
+      <li class="mobile-menu-item">
+        
+        
+        About              </li>
+    </a>
+    
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+      <div class="logo-wrapper">  
+  <a href="/." class="logo">Zongpu's Blog</a>  
+</div>  
+  
+<nav class="site-navbar">  
+    
+    <ul id="menu" class="menu">  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/">  
+              
+              
+              Home  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/archives/">  
+              
+              
+              Archives  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/tags/">  
+              
+              
+              Tags  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/categories/">  
+              
+              
+              Categories  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/photography/">  
+              
+              
+              Photography  
+              
+          </a>  
+        </li>  
+        
+        <li class="menu-item">  
+          <a class="menu-item-link" href="/about/">  
+              
+              
+              About  
+              
+          </a>  
+        </li>  
+        
+    </ul>  
+    
+</nav>  
+
+    </header>
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      有关Git&amp;Hexo的一些小事儿
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-04-24
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Hexo%E4%B8%8A%E4%BC%A0%E7%9A%84%E5%9B%BE%E7%89%87%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%8A%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">1.Hexo上传的图片在网页上无法显示的解决办法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Hexo-d-%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2%E6%97%B6%E5%87%BA%E7%8E%B0warning-LF-will-be-replaced-by-CRLF-in-%E2%80%A6%E2%80%A6%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2.Hexo d 生成博客时出现warning: LF will be replaced by CRLF in ……的解决办法</span></a></li></ol>
+    </div>
+  </div>
+  
+
+  <div class="post-content">
+    
+    <p>这是一些平时所遇到小问题的记录</p>
+<h1 id="1-Hexo上传的图片在网页上无法显示的解决办法"><a href="#1-Hexo上传的图片在网页上无法显示的解决办法" class="headerlink" title="1.Hexo上传的图片在网页上无法显示的解决办法"></a>1.Hexo上传的图片在网页上无法显示的解决办法</h1><p>感觉问题的原因就是图片没有跟随.md文件一同上传Github，找不到图片路径，因而无法显示。</p>
+<p><strong>(1)</strong> 找到<code>Hexo</code>下的<code>_config.yml</code>里的<code>post_asset_folder</code>，把这个选项从<code>false</code>改成<code>true</code>;</p>
+<p><strong>(2)</strong> 在<code>Hexo</code>目录下打开Git Brsh，执行一个下载上传图片插件的命令<code>npm install hexo-asset-image --save</code>;</p>
+<p>**(3) **继续在Git Brsh下利用<code>hexo n &quot;Hexo这是一个测试文件&quot;</code>来生成md的文件（” “里的内容填自己的文件名），这时就会在同级的目录下生成一个同名的文件夹；</p>
+<p><strong>(4)</strong> 在<code>.md</code>的文件中要插入图片时，先要把所要插入的图片放在生成的同名文件夹下;</p>
+<p><strong>(5)</strong> 利用markdown的语法将文件引入文章中;</p>
+<p><strong>(6)</strong> 提交<code>hexo clean –&gt;hexo generate –&gt;hexo deploy</code>。</p>
+<p><em>参考文献：</em></p>
+<p>1.<a href="https://blog.csdn.net/qq_38148394/article/details/79997971">https://blog.csdn.net/qq_38148394/article/details/79997971</a></p>
+<h1 id="2-Hexo-d-生成博客时出现warning-LF-will-be-replaced-by-CRLF-in-……的解决办法"><a href="#2-Hexo-d-生成博客时出现warning-LF-will-be-replaced-by-CRLF-in-……的解决办法" class="headerlink" title="2.Hexo d 生成博客时出现warning: LF will be replaced by CRLF in ……的解决办法"></a>2.Hexo d 生成博客时出现warning: LF will be replaced by CRLF in ……的解决办法</h1><p>问题如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">warning: LF will be replaced by CRLF in 2019/04/24/Hexo-test/index.html.</span><br><span class="line">The file will have its original line endings in your working directory.</span><br><span class="line">warning: LF will be replaced by CRLF in about/index.html.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>解决方法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf false</span><br></pre></td></tr></table></figure>
+
+<p>因就是（我并不懂）：</p>
+<p>原因是路径中存在 &#x2F; 的符号转义问题，false就是不转换符号默认是true，相当于把路径的 &#x2F; 符号进行转义，这样添加的时候就有问题</p>
+<p><em>参考文献：</em></p>
+<ol>
+<li><a href="https://blog.csdn.net/wxl1555/article/details/53033739">https://blog.csdn.net/wxl1555/article/details/53033739</a></li>
+</ol>
+
+    
+  </div>
+
+  
+  <!-- Post Copyright -->
+
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span>Author: </span>
+    <a href="http://yoursite.com">Zongpu</a>
+  </p>
+  <p class="copyright-item">
+    <span>Link: </span>
+    <a href="http://yoursite.com/2019/04/24/%E6%9C%89%E5%85%B3Git-Hexo%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E4%BA%8B%E5%84%BF/">http://yoursite.com/2019/04/24/%E6%9C%89%E5%85%B3Git-Hexo%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E4%BA%8B%E5%84%BF/</a>
+  </p>
+  <p class="copyright-item">
+    <span>License: </span>
+    
+    知识共享署名-非商业性使用 4.0 国际许可协议
+  </p>
+</div>
+
+    
+
+  
+
+  
+  <footer class="post-footer">
+    
+    <div class="post-tags">
+      
+      <a href="/tags/Hexo/">Hexo</a>
+      
+      <a href="/tags/Git/">Git</a>
+      
+    </div>
+    
+      
+  <nav class="post-nav">  
+      
+      <a class="prev" href="/2019/08/06/%E6%9C%89%E5%85%B3ubuntu%E7%9A%84%E7%90%90%E7%A2%8E%E5%B0%8F%E4%BA%8B%E5%84%BF/">  
+        <i class="iconfont icon-left"></i>  
+        <span class="prev-text nav-default">有关ubuntu的琐碎小事儿</span>  
+        <span class="prev-text nav-mobile">Prev</span>  
+      </a>  
+      
+      
+      <a class="next" href="/2018/11/01/%E5%88%9D%E6%AC%A1%E6%8F%90%E4%BA%A4%E9%A1%B9%E7%9B%AE%E5%88%B0Github/">  
+        <span class="next-text nav-default">初次提交项目到Github</span>  
+        <span class="prev-text nav-mobile">Next</span>  
+        <i class="iconfont icon-right"></i>  
+      </a>  
+      
+  </nav>  
+  
+
+  </footer>
+  
+
+</article>
+        </div>
+          
+  <div class="comments" id="comments">  
+      
+  </div>  
+  
+
+      </div>
+    </main>
+    <footer id="footer" class="footer">
+      <!-- Social Links -->
+
+<div class="social-links">
+  
+  
+  
+  
+  <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+  
+  
+  
+  
+  
+  
+  <a href="https://github.com/zongpu" class="iconfont icon-github" title="github"></a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+</div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme -
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  <span class="division">|</span>
+  <span class="hosting-info">
+    footer.hosting
+  </span>
+
+  <span class="copyright-year">
+    <span>
+      
+      &copy;
+      
+      2026      
+    </span>
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+
+    <span class="author">Zongpu</span>
+  </span>
+
+</div>
+    </footer>
+    <div class="back-to-top" id="back-to-top"> <i class="iconfont icon-up"></i> </div>
+  </div>
+  
+  
+  
+
+
+
+
+
+
+
+<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+
+
+
+<script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/even.js?v=undefined"></script>
+</body>
+
+</html>
