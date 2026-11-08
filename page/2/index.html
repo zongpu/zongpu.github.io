@@ -205,6 +205,63 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/2019/09/01/%E9%9D%A2%E8%AF%95%E9%A2%9827%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/">面试题27：二叉树的镜像</a>
+      
+    </h1>
+
+    <div class="post-meta">
+      <span class="post-time">
+        2019-09-01
+      </span>
+      
+      
+      <span class="post-category">
+        
+        <a href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+        
+      </span>
+      
+      
+    </div>
+  </header>
+
+  
+
+  <div class="post-content">
+    
+    
+    
+
+    
+    <p>题目：<a href="https://www.nowcoder.com/ta/coding-interviews">https://www.nowcoder.com/ta/coding-interviews</a></p>
+<p>操作给定的二叉树，将其变换为源二叉树的镜像。</p>
+<p>思考：</p>
+<p>反转根节点的左右子节点，这样<strong>把左右子节点带着的子树进行了调整</strong>；接下来对翻转后的左节点进行左右子节点的调整；翻转后的右节点操作同理；</p>
+<p>当交换完所有非也节点的左右子节点后，就可以得到原树的镜像。</p>
+<p>实际操作：</p>
+<p>反转二叉树的左右节点，其实直接反转就好了：root.left,root.right &#x3D; root.right, root.left</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TreeNode</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, x</span>):</span><br><span class="line">        <span class="variable language_">self</span>.val = x</span><br><span class="line">        <span class="variable language_">self</span>.left = <span class="literal">None</span></span><br><span class="line">        <span class="variable language_">self</span>.right = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">Mirror</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        root.left,root.right = root.right, root.left</span><br><span class="line">        <span class="keyword">if</span> root.left:</span><br><span class="line">            <span class="variable language_">self</span>.Mirror(root.left)</span><br><span class="line">        <span class="keyword">if</span> root.right:</span><br><span class="line">            <span class="variable language_">self</span>.Mirror(root.right)</span><br><span class="line">            </span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+    
+  </div>
+
+  
+
+  
+
+</article>
+  
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/2019/09/01/%E9%9D%A2%E8%AF%95%E9%A2%9810%EF%BC%9A%E8%B7%B3%E5%8F%B0%E9%98%B6/">面试题10：跳台阶</a>
       
     </h1>
@@ -930,64 +987,6 @@ ge
 
 <p>取消注释并在‘’中填入想要的工作路径，例如：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.notebook_dir = /home/zongpu/AnacondaProjects</span><br></pre></td></tr></table></figure>
-
-
-    
-    
-  </div>
-
-  
-
-  
-
-</article>
-  
-  <article class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/2019/08/06/AndrewNgMachineLearning%E6%80%BB%E7%BB%93%E4%B9%8BLinearRegression/">AndrewNg Machine Learning 总结之Linear regression</a>
-      
-    </h1>
-
-    <div class="post-meta">
-      <span class="post-time">
-        2019-08-06
-      </span>
-      
-      
-      <span class="post-category">
-        
-        <a href="/categories/Machine-Learning/">Machine Learning</a>
-        
-      </span>
-      
-      
-    </div>
-  </header>
-
-  
-
-  <div class="post-content">
-    
-    
-    
-
-    
-    <h1 id="Linear-regression"><a href="#Linear-regression" class="headerlink" title="Linear regression"></a>Linear regression</h1><h2 id="线性回归模型："><a href="#线性回归模型：" class="headerlink" title="线性回归模型："></a>线性回归模型：</h2><p>$$<br>h_\theta(x)&#x3D;\theta^Tx<br>$$</p>
-<h2 id="代价函数："><a href="#代价函数：" class="headerlink" title="代价函数："></a>代价函数：</h2><p>$$<br>J(\theta)&#x3D;{(1&#x2F;2m)}{\sum_{i&#x3D;1}^{m}{(h_\theta(x^{(i)})-y^{(i)})^2}}<br>$$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">J</span> = <span class="title">computeCost</span><span class="params">(X, y, theta)</span></span></span><br><span class="line">m = <span class="built_in">length</span>(y);<span class="comment">% number of training examples</span></span><br><span class="line">方法<span class="number">1</span>：</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:m</span><br><span class="line">     J=J+(X(<span class="built_in">i</span>,:)*theta-y(<span class="built_in">i</span>,:))^<span class="number">2</span>/(<span class="number">2</span>*m);</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line">方法<span class="number">2</span>：</span><br><span class="line">J=sum((X*theta-y).^<span class="number">2</span>)/(<span class="number">2</span>*m);<span class="comment">%此处用.^2对每个值求平方,然后用sum()函数求和利用sunm()函数</span></span><br><span class="line"></span><br><span class="line">方法<span class="number">3</span>：（通用于单变量、多变量回归）</span><br><span class="line">J=((X*theta-y)&#x27;*(X*theta-y))/(<span class="number">2</span>*m);<span class="comment">%向量相乘亦可得到同样的和值</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="梯度下降法更新theta："><a href="#梯度下降法更新theta：" class="headerlink" title="梯度下降法更新theta："></a>梯度下降法更新theta：</h2><p>$$<br>\theta_j:&#x3D;\theta_j-\alpha(1&#x2F;m){\sum_{i&#x3D;1}^{m}{(h_\theta(x^{(i)})-y^{(i)}){x_j^{(i)}}}}<br>$$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[theta, J_history]</span> = <span class="title">gradientDescent</span><span class="params">(X, y, theta, alpha, num_iters)</span></span></span><br><span class="line">m = <span class="built_in">length</span>(y); </span><br><span class="line">J_history = <span class="built_in">zeros</span>(num_iters, <span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> iter = <span class="number">1</span>:num_iters</span><br><span class="line"><span class="comment">%     x=X(:,2);%得到列向量x1</span></span><br><span class="line"><span class="comment">%     theta0=theta(1);%得到初值，</span></span><br><span class="line"><span class="comment">%     theta1=theta(2);</span></span><br><span class="line"><span class="comment">%     theta0=theta0-(alpha/m)*sum((X*theta-y));%x0为全1的列向量，不必写出</span></span><br><span class="line"><span class="comment">%     theta1=theta1-(alpha/m)*sum((X*theta-y).*x);%使用点乘.*直接得到每组数据相乘结果</span></span><br><span class="line"><span class="comment">%     theta=[theta0;</span></span><br><span class="line"><span class="comment">%                theta1];%theta是size(2,1)的矩阵，定义时theta = zeros(2, 1)这里theta0与theta1之间应该用分号隔开，表示两行</span></span><br><span class="line">           </span><br><span class="line"> theta = theta - alpha / m * X&#x27; * (X * theta - y);<span class="comment">%整合上面对每个theta操作，写成矩阵形式</span></span><br><span class="line"> <span class="comment">%为了绘制出J(theta)曲线</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">% Save the cost J in every iteration    </span></span><br><span class="line">    J_history(iter) = computeCost(X, y, theta);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="正规方程法直接得到theta解析解："><a href="#正规方程法直接得到theta解析解：" class="headerlink" title="正规方程法直接得到theta解析解："></a>正规方程法直接得到theta解析解：</h2><p>$$<br>\theta&#x3D;(X^TX)^{-1}{X^T}y<br>$$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[theta]</span> = <span class="title">normalEqn</span><span class="params">(X, y)</span></span></span><br><span class="line">theta = <span class="built_in">zeros</span>(<span class="built_in">size</span>(X, <span class="number">2</span>), <span class="number">1</span>);</span><br><span class="line"><span class="comment">% theta=((X&#x27;*X)^-1)*X&#x27;*y;</span></span><br><span class="line">theta = pinv(X&#x27; * X) * X&#x27; * y;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="特征归一化："><a href="#特征归一化：" class="headerlink" title="特征归一化："></a>特征归一化：</h2><p>$$<br>x:&#x3D;(x^i-mu)&#x2F;s^i<br>$$</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[X_norm, mu, sigma]</span> = <span class="title">featureNormalize</span><span class="params">(X)</span></span></span><br><span class="line">X_norm = X;</span><br><span class="line">mu = <span class="built_in">zeros</span>(<span class="number">1</span>, <span class="built_in">size</span>(X, <span class="number">2</span>));</span><br><span class="line">sigma = <span class="built_in">zeros</span>(<span class="number">1</span>, <span class="built_in">size</span>(X, <span class="number">2</span>));    </span><br><span class="line">m = <span class="built_in">length</span>(X(:,<span class="number">1</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">%for i=1:size(X, 2)</span></span><br><span class="line"><span class="comment">%mu(i)=sum(X(:,i))/m;</span></span><br><span class="line"><span class="comment">%sigma(i)=std(X(:,i));%std(X(:,1)) computes the standard deviation</span></span><br><span class="line"><span class="comment">%x=(X(:,i)-mu(i))./sigma(i);%X(:,i)-mu(i))表示每列的每个元素减去均值，./表示点除</span></span><br><span class="line"><span class="comment">%X_norm(:,i)=x;</span></span><br><span class="line"><span class="comment">%end</span></span><br><span class="line"></span><br><span class="line"> mu=<span class="built_in">mean</span>(X);</span><br><span class="line"> sigma=std(X);</span><br><span class="line"> <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">size</span>(X,<span class="number">2</span>),</span><br><span class="line">     X_norm(:,<span class="built_in">i</span>) = (X(:,<span class="built_in">i</span>) - mu(<span class="built_in">i</span>)) / sigma(<span class="built_in">i</span>);</span><br><span class="line"> <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
 
 
     
